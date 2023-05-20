@@ -13,13 +13,15 @@ int main(void)
 {
 	int digit;
 
-	for (digit = 48; digit < 58; digit++)
+	for (digit = 0; digit < 10; digit++)
 	{
-		putchar(digit);
-		putchar(44); /* Prints a comma character*/
+		putchar(48 + digit);
 
-		while (digit != 57)
-			putchar(32); /* Print a Space */
+		if (digit < 9)
+		{
+			putchar(44); /* Prints Comma Char */
+			putchar(32); /* Prints Space Char */
+		}
 	}
 
 	putchar(10);
