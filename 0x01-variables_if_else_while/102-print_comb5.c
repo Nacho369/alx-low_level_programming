@@ -29,7 +29,7 @@ int main(void)
 
 					putchar(d3);
 					putchar(d4);
-					if (d1 < 57 || d2 < 56 || d3 < 57 || d4 < 57)
+					if (d1 != 57 || d2 != 56 || d3 != 57 || d4 != 57)
 					{
 						putchar(44);
 						putchar(32);
