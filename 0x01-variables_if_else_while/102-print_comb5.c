@@ -35,6 +35,7 @@ int main(void)
 						putchar(32);
 					}
 				}
+				d4 = 48;
 			}
 		}
 	}
