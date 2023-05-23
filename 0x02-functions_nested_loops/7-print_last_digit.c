@@ -19,5 +19,8 @@ int print_last_digit(int num)
 		_putchar(48 + last_digit);
 	}
 
+	last_digit = num % 10;
+	_putchar(48 + last_digit);
+
 	return (last_digit);
 }
