@@ -4,14 +4,13 @@
 /**
  * print_last_digit - Prints the last digit of a number
  *
- * @n: Number whose last digit is to be printed
+ * @num: Number whose last digit is to be printed
  *
  * Return: Value of the last digit
  */
-int print_last_digit(int n)
+int print_last_digit(int num)
 {
 	int last_digit;
-	int num = n;
 
 	if (num < 0)
 		num *= -1;
