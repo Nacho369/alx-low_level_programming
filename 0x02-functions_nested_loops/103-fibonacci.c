@@ -13,16 +13,16 @@
 int main(void)
 {
 	int iter;
-	long int sum = 1, curr = 2;
-	long int next;
+	long int val = 1, curr = 2;
+	long int next, sum = 0;
 
-	for (iter = 0; sum < 4000000; iter++)
+	for (iter = 0; val < 4000000; iter++)
 	{
-		if ((sum % 2) == 0)
-			sum += sum;
+		if ((val % 2) == 0)
+			sum += val;
 
-		next = sum + curr;
-		sum = curr;
+		next = val + curr;
+		val = curr;
 		curr = next;
 	}
 
