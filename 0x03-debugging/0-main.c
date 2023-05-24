@@ -1,11 +1,7 @@
 #include "main.h"
 
-
 /**
- * main -Entry point of program
- *
- * Description: Test for the positive_or_negative function
- *
+ * main - Test for the positive_or_negative function
  * Return: 0 (Success)
  */
 int main(void)
