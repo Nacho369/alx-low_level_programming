@@ -16,7 +16,7 @@ int main(void)
 	long int curr = 2, next;
 	long int sum = 1;
 
-	for (iter = 0; iter < 50; iter++)
+	for (iter = 0; iter < max; iter++)
 	{
 		if (sum != 1)
 			printf(", ");
