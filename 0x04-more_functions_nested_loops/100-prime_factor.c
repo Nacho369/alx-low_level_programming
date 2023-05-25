@@ -13,13 +13,14 @@ int is_prime(int factor);
 int main(void)
 {
 	unsigned long int num = 612852475143;
-	unsigned long int factor = 23;
+	unsigned long int factor = 2;
 
-	for ( ; factor < 12057; factor += 2)
+	for ( ; factor <= num; factor++)
 	{
-		while (num % factor == 0 && num != factor)
+		if (num % factor == 0 && num != factor)
 		{
 			num /= factor;
+			factor--;
 		}
 	}
 
