@@ -12,7 +12,8 @@ int is_factor(int factor);
  */
 int main(void)
 {
-	unsigned long int num = 612852475143;
+	/* unsigned long int num = 612852475143; */
+	unsigned long int num = 100467000;
 	unsigned long int factor = 2, check_factor, larg_pf;
 
 	while (factor < num)
@@ -48,7 +49,7 @@ int main(void)
 int is_factor(int factor)
 {
 	int iter;
-	
+
 	for (iter = 2; iter < factor; iter++)
 	{
 		if (factor % iter == 0)
