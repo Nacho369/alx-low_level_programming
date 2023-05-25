@@ -13,11 +13,13 @@ void print_line(int n)
 	int num = n;
 	int iter;
 
-	if (num <= 0)
-		_putchar(10);
-
 	for (iter = 0; iter < num; iter++)
+	{
+		if (num == 0 || num < 0)
+			break;
+
 		_putchar(95);
+	}
 
 	_putchar(10);
 }
