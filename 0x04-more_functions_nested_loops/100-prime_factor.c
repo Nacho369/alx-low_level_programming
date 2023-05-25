@@ -1,6 +1,6 @@
 #include "main.h"
 
-int is_factor(int factor);
+int is_prime(int factor);
 
 /**
  * main - Entry point of the program
@@ -13,47 +13,17 @@ int is_factor(int factor);
 int main(void)
 {
 	unsigned long int num = 612852475143;
-	unsigned long int factor = 3, check_factor, larg_pf;
+	unsigned long int factor = 23;
 
-	while (factor < 12057)
+	for ( ; factor < 12057; factor += 2)
 	{
-		if (num % factor == 0)
-			num /= factor;
-		else
+		while (num % factor == 0 && num != factor)
 		{
-			check_factor = factor + 1;
-
-			while (is_factor(check_factor) != 1)
-				check_factor++;
-
-			factor = check_factor;
+			num /= factor;
 		}
-
-		larg_pf = factor;
 	}
 
-	printf("%lu\n", larg_pf);
+	printf("%lu\n", num);
 
 	return (0);
-}
-
-/**
- * is_factor - Checks if a number is a prime factor
- *
- * @factor: Number to check
- *
- * Return: 1 if true
- * 0 otherwise
- */
-int is_factor(int factor)
-{
-	int iter;
-
-	for (iter = 2; iter < factor; iter++)
-	{
-		if (factor % iter == 0)
-			return (0);
-	}
-
-	return (1);
 }
