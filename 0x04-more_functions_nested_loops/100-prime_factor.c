@@ -12,31 +12,27 @@ int is_factor(int factor);
  */
 int main(void)
 {
-	/* long int num = 612852475143; */
-	long int num = 24;
-	long int factor = 2, larg_pf = 0;
-	long int check_factor;
+	unsigned long int num = 612852475143;
+	unsigned long int factor = 2, check_factor, larg_pf;
 
 	while (factor < num)
 	{
 		if (num % factor == 0)
-		{
 			num /= factor;
-			larg_pf = factor;
-			printf("Each factor: %ld\n", factor);
-		}
 		else
 		{
 			check_factor = factor + 1;
 
-			while (!(is_factor(check_factor)))
+			while (is_factor(check_factor) != 1)
 				check_factor++;
+
+			factor = check_factor;
 		}
 
-		factor = check_factor;
+		larg_pf = factor;
 	}
 
-	printf("%ld\n", larg_pf);
+	printf("%lu\n", larg_pf);
 
 	return (0);
 }
