@@ -20,4 +20,6 @@ void puts_half(char *str)
 
 	for (half = max; str[half] != '\0'; half++)
 		_putchar(str[half]);
+
+	_putchar(10);
 }
