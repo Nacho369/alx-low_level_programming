@@ -16,14 +16,12 @@ void rev_string(char *s)
 	for (iter = 0; s[iter] != '\0'; iter++)
 		;
 
-	max = iter - 1;
 	half = max / 2;
 
-	for (rev = 0; rev <= half; rev++)
+	for (rev = 0; rev <= iter; rev++)
 	{
-		start = s[max - rev];
 		end = s[rev];
-		s[rev] = start;
-		s[max - rev] = end;
+		s[rev] = s[(iter - 1) - rev];
+		s[(iter - 1) - rev] = end;
 	}
 }
