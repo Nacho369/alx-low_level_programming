@@ -11,15 +11,19 @@
 void rev_string(char *s)
 {
 	int iter, rev, max;
+	char start, end, half;
 
 	for (iter = 0; s[iter] != '\0'; iter++)
 		;
 
-	max = 0;
+	max = iter - 1;
+	half = max / 2;
 
-	for (rev = iter; max != iter; rev--)
+	for (rev = 0; rev <= half; rev++)
 	{
-		s[max] = s[rev];
-		max++;
+		start = s[max - rev];
+		end = s[rev];
+		s[rev] = start;
+		s[max - rev] = end;
 	}
 }
