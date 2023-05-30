@@ -9,9 +9,10 @@
  */
 int main(void)
 {
-	srand(time(NULL));
+	int rand_num;
 
-	int rand_num = rand();
+	srand(time(NULL));
+	rand_num = rand();
 
 	printf("%d\n", rand_num);
 
