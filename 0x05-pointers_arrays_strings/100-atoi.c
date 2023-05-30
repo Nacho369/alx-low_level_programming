@@ -21,7 +21,8 @@ int _atoi(char *s)
 		if (s[iter] > 47 && s[iter] < 58)
 			res = (res * 10) + (s[iter] - '0');
 
-		if ((!(s[iter] > 47 && s[iter] < 58)) && (s[iter - 1] > 47 && s[iter - 1] < 58))
+		if ((!(s[iter] > 47 && s[iter] < 58)) &&
+		(s[iter - 1] > 47 && s[iter - 1] < 58))
 			break;
 	}
 
