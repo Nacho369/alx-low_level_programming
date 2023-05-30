@@ -12,9 +12,9 @@ int main(void)
 	int rand_num;
 
 	srand(time(NULL));
-	/* rand_num = rand(); */
-
-	/* printf("%d\n", rand_num); */
+	rand_num = rand();
+	
+	printf("%d\n", rand_num);
 
 	return (0);
 }
