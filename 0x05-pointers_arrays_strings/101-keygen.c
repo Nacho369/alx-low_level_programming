@@ -14,7 +14,7 @@ int main(void)
 	srand(time(NULL));
 	rand_num = rand();
 
-	printf("%d\n", rand_num);
+	/* printf("%d\n", rand_num); */
 
 	return (0);
 }
