@@ -16,10 +16,8 @@ char *cap_string(char *str)
 
 	for (iter = 0; str[iter] != '\0'; iter++)
 	{
-		while (!(str[iter] >= 97 && str[iter] <= 122))
-			iter++;
-
-		if (str[iter - 1] == 32 || str[iter - 1] == 9 ||
+		if ((str[iter] >= 97 && str[iter] <= 122) &&
+		str[iter - 1] == 32 || str[iter - 1] == 9 ||
 		str[iter - 1] == 10 || str[iter - 1] == 44 ||
 		str[iter - 1] == 59 || str[iter - 1] == 46 ||
 		str[iter - 1] == 33 || str[iter - 1] == 63 ||
