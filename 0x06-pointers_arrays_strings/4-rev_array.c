@@ -11,18 +11,15 @@
  */
 void reverse_array(int *a, int n)
 {
-	int iter, temp;
-	int low, high;
+	int low, high, temp;
 
 	high = n - 1;
-	low = 0;
 
-	for (iter = 0; low < high; iter++)
+	for (low = 0; low < high; low++)
 	{
 		temp = a[low];
 		a[low] = a[high];
 		a[high] = temp;
-		low++;
 		high--;
 	}
 }
