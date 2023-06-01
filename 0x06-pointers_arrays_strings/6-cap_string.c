@@ -25,6 +25,10 @@ char *cap_string(char *str)
 		str[iter - 1] == 41 || str[iter - 1] == 123 ||
 		str[iter - 1] == 125))
 			str[iter] = str[iter] - 32;
+		else if ((str[0] >= 97 && str[0] <= 122))
+			str[0] = str[0] - 32;
+		else
+			str[iter] = str[iter];
 	}
 
 	return (str);
