@@ -2,7 +2,7 @@
 
 
 /**
- * cap_string - Capitalizes the first letter of all words of a 
+ * cap_string - Capitalizes the first letter of all words of a
  * string that the previous char is either space, tab, newline ',',
  * ';', '.', '!', '?', '"', '(', ')', '{', and '}'
  *
