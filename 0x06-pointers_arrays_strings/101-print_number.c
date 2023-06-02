@@ -10,10 +10,10 @@
  */
 void print_number(int n)
 {
-	int num = n;
-	int rev_num, digits;
+	unsigned int num = n;
+	unsigned int rev_num, digits;
 
-	if (num < 0)
+	if (n < 0)
 	{
 		num = num * -1;
 		_putchar('-');
