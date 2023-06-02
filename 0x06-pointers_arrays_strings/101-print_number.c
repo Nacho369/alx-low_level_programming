@@ -26,7 +26,7 @@ void print_number(int n)
 
 	while (num != 0)
 	{
-		rev_num *= 10 + (num % 10);
+		rev_num = rev_num * 10 + (num % 10);
 		num /= 10;
 	}
 
