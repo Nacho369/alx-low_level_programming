@@ -10,14 +10,16 @@
  */
 void print_number(int n)
 {
-	unsigned int num = n;
+	unsigned int num;
 	unsigned int rev_num, digits;
 
 	if (n < 0)
 	{
-		num = num * -1;
+		num = n * -1;
 		_putchar('-');
 	}
+	else
+		num = n;
 
 	if (num == 0)
 		_putchar(48);
