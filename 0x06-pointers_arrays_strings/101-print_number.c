@@ -24,13 +24,13 @@ void print_number(int n)
 
 	rev_num = 0;
 
-	while (num != 0)
+	while (num > 0)
 	{
 		rev_num = rev_num * 10 + (num % 10);
 		num /= 10;
 	}
 
-	while (rev_num != 0)
+	while (rev_num > 0)
 	{
 		digits = rev_num % 10;
 		_putchar(48 + digits);
