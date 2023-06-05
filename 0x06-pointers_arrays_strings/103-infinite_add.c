@@ -33,8 +33,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (len + 1 > size_r) /* Adding +1 for the addition overflow */
 		return (0);
 
-	r[size_r - 1] = '\0';
-
 	while (ind1 >= 0 && ind2 >= 0)
 	{
 		temp = tens + (n1[ind1] - 48) + (n2[ind2] - 48);
