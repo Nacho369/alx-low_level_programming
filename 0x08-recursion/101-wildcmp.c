@@ -47,8 +47,8 @@ int check_next(char *s1, char *s2, int indx, int indx1)
 		if (s2[indx1] == '\0')
 			return (1);
 
-		if (s1[indx + 1] == s2[indx1]) /* Code for school.c -> s*c */
-			indx += 2;
+		if (s1[indx] == s2[indx1]) /* Code for school.c -> s*c */
+			indx += 1;
 
 		if (s1[indx] != s2[indx1]) /* Line check if issues */
 			indx = inc_s1_indx(s1, s2, indx, indx1);
