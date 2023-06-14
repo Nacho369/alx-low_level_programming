@@ -26,6 +26,4 @@ char **strtow(char *str)
 
 	if (arr_str == NULL)
 		return (NULL);
-
-	for (indx = 0; )
 }
