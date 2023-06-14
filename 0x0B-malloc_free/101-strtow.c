@@ -10,8 +10,8 @@
  */
 char **strtow(char *str)
 {
-	int indx, len_ch,  indx2 = 0, indx3 = 0, size = 0;
-	int row, col = 0;
+	int indx, indx2 = 0, indx3 = 0, size = 0, len;
+	int row, col;
 	char **arr_str = NULL;
 
 	if (str == NULL || *str == '\0')
@@ -24,21 +24,22 @@ char **strtow(char *str)
 			size++; /* Gets the number of pointers to create. */
 	}
 
-	/* Allocate space for the size number of pointers plus one for NULL */
-	arr_str = (char **) malloc(size * sizeof(char *));
+	/* Allocate space for the total size of pointers plus one for NULL */
+	arr_str = (char **) malloc((size + 1) * sizeof(char *));
 
 	if (arr_str == NULL)
 		return (NULL);
 
 	for (row = 0; row < size; row++)
 	{
-		len_ch = 0;
+		len = 0;
+		col = 0;
 
 		/* Get the lenght of each word */
 		for (; str[indx2] != '\0'; indx2++)
 		{
 			if (str[indx2] != 32)
-				len_ch++;
+				len++;
 
 			if (str[indx2] != 32 &&
 			(str[indx2 + 1] == 32 || str[indx2 + 1] == '\0'))
@@ -48,8 +49,8 @@ char **strtow(char *str)
 			}
 		}
 
-		/* Allocate space for each wors based on the lenght gotten */
-		arr_str[row] = (char *) malloc(len_ch * sizeof(char));
+		/* Allocate space for each word based on the lenght gotten */
+		arr_str[row] = (char *) malloc((len + 1) * sizeof(char));
 
 		if (arr_str[row] == NULL)
 			return (NULL); /* Need to free, not complete */
@@ -71,8 +72,10 @@ char **strtow(char *str)
 			}
 		}
 
-		/* arr_str[row][col] = '\0'; */
+		arr_str[row][col] = '\0';
 	}
+
+	arr_str[row] = NULL;
 
 	return (arr_str);
 }
