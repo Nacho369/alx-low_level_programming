@@ -54,7 +54,7 @@ char **strtow(char *str)
 		if (arr_str[row] == NULL)
 			return (NULL); /* Need to free, not complete */
 
-		/* Assign each word to a pointe		r */
+		/* Assign each word to a pointer */
 		for (; str[indx3] != '\0'; indx3++)
 		{
 			if (str[indx3] != 32)
