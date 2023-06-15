@@ -12,7 +12,7 @@ int word_sz(char *str, int indx);
  */
 char **strtow(char *str)
 {
-	int indx = 0, indx2 = 0, len = 0, size, row, col, iter;
+	int indx = 0, indx2 = 0, len = 0, size, row, col;
 	char **arr_str = NULL;
 
 	if (str == NULL || *str == '\0')
