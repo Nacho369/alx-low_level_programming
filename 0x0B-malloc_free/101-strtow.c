@@ -1,5 +1,6 @@
 #include "main.h"
 
+int size_m(char *str);
 
 /**
  * strtow - A function that splits a string into words
@@ -10,21 +11,15 @@
  */
 char **strtow(char *str)
 {
-	int indx, indx2 = 0, indx3 = 0, size = 0, len;
+	int indx2 = 0, indx3 = 0, size, len;
 	int row, col;
 	char **arr_str = NULL;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
-	for (indx = 0; str[indx] != '\0'; indx++)
-	{
-		if ((str[indx] != 32) &&
-		 (str[indx + 1] == 32 || str[indx + 1] == '\0'))
-			size++; /* Gets the number of pointers to create. */
-	}
+	size = size_m(str);
 
-	/* Allocate space for the total size of pointers plus one for NULL */
 	arr_str = (char **) malloc((size + 1) * sizeof(char *));
 
 	if (arr_str == NULL)
@@ -32,10 +27,8 @@ char **strtow(char *str)
 
 	for (row = 0; row < size; row++)
 	{
-		len = 0;
-		col = 0;
+		len = 0, col = 0;
 
-		/* Get the lenght of each word */
 		for (; str[indx2] != '\0'; indx2++)
 		{
 			if (str[indx2] != 32)
@@ -49,13 +42,11 @@ char **strtow(char *str)
 			}
 		}
 
-		/* Allocate space for each word based on the lenght gotten */
 		arr_str[row] = (char *) malloc((len + 1) * sizeof(char));
 
 		if (arr_str[row] == NULL)
 			return (NULL); /* Need to free, not complete */
 
-		/* Assign each word to a pointer */
 		for (; str[indx3] != '\0'; indx3++)
 		{
 			if (str[indx3] != 32)
@@ -78,4 +69,26 @@ char **strtow(char *str)
 	arr_str[row] = NULL;
 
 	return (arr_str);
+}
+
+
+/**
+ * size_m - Get the number of words in the string
+ *
+ * @str: String to get worss from
+ *
+ * Return: The number of words in the string
+ */
+int size_m(char *str)
+{
+	int indx, size = 0;
+
+	for (indx = 0; str[indx] != '\0'; indx++)
+	{
+		if ((str[indx] != 32) &&
+		(str[indx + 1] == 32 || str[indx + 1] == '\0'))
+			size++; /* Gets the number of pointers to create. */
+	}
+
+	return (size);
 }
