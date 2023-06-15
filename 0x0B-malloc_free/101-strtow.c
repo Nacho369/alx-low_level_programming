@@ -18,15 +18,6 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
-	for (iter = 0; str[iter] != '\0'; iter++)
-	{
-		if (str[iter] != 32)
-			break;
-
-		if (str[iter] == 32 && str[iter + 1] == '\0')
-			return (NULL);
-	}
-
 	size = size_m(str);
 
 	arr_str = (char **) malloc((size + 1) * sizeof(char *));
