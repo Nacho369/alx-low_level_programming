@@ -1,6 +1,6 @@
 #include "main.h"
 
-int size_m(char *str);
+int word_num(char *str);
 
 /**
  * strtow - A function that splits a string into words
@@ -26,7 +26,7 @@ char **strtow(char *str)
 			return (NULL);
 	}
 
-	size = size_m(str);
+	size = word_num(str);
 
 	arr_str = (char **) malloc((size + 1) * sizeof(char *));
 
@@ -78,22 +78,22 @@ char **strtow(char *str)
 
 
 /**
- * size_m - Get the number of words in the string
+ * word_num - Get the number of words in the string
  *
  * @str: String to get worss from
  *
  * Return: The number of words in the string
  */
-int size_m(char *str)
+int word_num(char *str)
 {
-	int indx, size = 0;
+	int indx, num = 0;
 
 	for (indx = 0; str[indx] != '\0'; indx++)
 	{
 		if ((str[indx] != 32) &&
 		(str[indx + 1] == 32 || str[indx + 1] == '\0'))
-			size++; /* Gets the number of pointers to create. */
+			num++; /* Gets the number of pointers to create. */
 	}
 
-	return (size);
+	return (num);
 }
