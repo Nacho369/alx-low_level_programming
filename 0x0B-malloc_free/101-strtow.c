@@ -12,11 +12,20 @@ int word_sz(char *str, int indx);
  */
 char **strtow(char *str)
 {
-	int indx = 0, indx2 = 0, len = 0, size, row, col;
+	int indx = 0, indx2 = 0, len = 0, size, row, col, iter;
 	char **arr_str = NULL;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
+
+	for (iter = 0; str[iter] != '\0'; iter++)
+	{
+		if (str[iter] != 32)
+			break;
+
+		if (str[iter] == 32 && str[iter + 1] == '\0')
+			return (NULL);
+	}
 
 	size = size_m(str);
 
