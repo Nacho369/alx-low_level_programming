@@ -26,11 +26,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	len += _strlen(s1);
 	len_s2 += _strlen(s2);
 
-	if (n >= len_s2)
-		len += _strlen(s2);
+	if (len_s2 > n)
+		len += n;
 	else
-		for (indx = 0; indx < n; indx++)
-			len += 1;
+		len += len_s2;
 
 	str_n_concat = malloc(sizeof(char) * (len + 1));
 
