@@ -35,8 +35,7 @@ char **strtow(char *str)
 
 	for (row = 0; row < size; row++)
 	{
-		col = 0;
-		len = 0;
+		col = 0, len = 0;
 
 		for (; str[indx] != '\0'; indx++)
 		{
@@ -59,10 +58,7 @@ char **strtow(char *str)
 		for (; str[indx2] != '\0'; indx2++)
 		{
 			if (str[indx2] != 32)
-			{
-				arr_str[row][col] = str[indx2];
-				col++;
-			}
+				arr_str[row][col++] = str[indx2];
 
 			if (str[indx2] != 32 &&
 			(str[indx2 + 1] == 32 || str[indx2 + 1] == '\0'))
