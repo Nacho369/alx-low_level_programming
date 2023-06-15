@@ -1,7 +1,6 @@
 #include "main.h"
 
 int size_m(char *str);
-int word_sz(char *str, int indx);
 
 /**
  * strtow - A function that splits a string into words
@@ -12,7 +11,7 @@ int word_sz(char *str, int indx);
  */
 char **strtow(char *str)
 {
-	int indx = 0, indx2 = 0, len = 0, size, row, col, iter;
+	int indx = 0, indx2 = 0, len, size, row, col, iter;
 	char **arr_str = NULL;
 
 	if (str == NULL || *str == '\0')
@@ -37,7 +36,20 @@ char **strtow(char *str)
 	for (row = 0; row < size; row++)
 	{
 		col = 0;
-		len = word_sz(str, indx);
+		len = 0;
+
+		for (; str[indx] != '\0'; indx++)
+		{
+			if (str[indx] != 32)
+				len++; /* Get size of the current word */
+
+			if (str[indx] != 32 &&
+			(str[indx + 1] == 32 || str[indx + 1] == '\0'))
+			{
+				indx += 1;
+				break;
+			}
+		}
 
 		arr_str[row] = (char *) malloc((len + 1) * sizeof(char));
 
@@ -88,33 +100,4 @@ int size_m(char *str)
 	}
 
 	return (size);
-}
-
-
-/**
- * word_sz - Get the size of word
- *
- * @str: String from where to get the size of word
- * @indx: Index of string
- *
- * Return: The size of the word
- */
-int word_sz(char *str, int indx)
-{
-	int len = 0;
-
-	for (; str[indx] != '\0'; indx++)
-	{
-		if (str[indx] != 32)
-			len++; /* Get size of the current word */
-
-		if (str[indx] != 32 &&
-		(str[indx + 1] == 32 || str[indx + 1] == '\0'))
-		{
-			indx += 1;
-			break;
-		}
-	}
-
-	return (len);
 }
