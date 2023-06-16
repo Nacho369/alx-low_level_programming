@@ -23,8 +23,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
+	for (indx = 0; s1[indx]; indx++)
+                len1++;
+
+	for (indx = 0; s2[indx]; indx++)
+                len2++;
 
 	if (len2 > n)
 		len2 = n;
@@ -47,22 +50,4 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	str_n_concat[indx] = '\0';
 
 	return (str_n_concat);
-}
-
-
-/**
- * _strlen - Find the lenght of a string
- *
- * @str: The string to find lenght of
- *
- * Return: Lenght of @str
- */
-int _strlen(char *str)
-{
-	int indx, len = 0;
-
-	for (indx = 0; str[indx] != '\0' && str[0] != '\0'; indx++)
-		len++;
-
-	return (len);
 }
