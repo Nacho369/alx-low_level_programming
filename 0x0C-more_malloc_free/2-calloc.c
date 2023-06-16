@@ -34,6 +34,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		 * Since ptr can't be set to a the
 		 * value 0 due to it being a null
 		 * pointer, arr_ptr was created to set the values to 0
+		 */
 		arr_ptr[indx] = 0;
 	}
 
