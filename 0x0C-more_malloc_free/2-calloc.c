@@ -12,8 +12,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int indx;
-	void *ptr = NULL;
-	char *arr_ptr = NULL;
+	char *ptr = NULL;
 
 	if (nmemb == 0)
 		return (NULL);
@@ -26,17 +25,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (ptr == NULL)
 		return (NULL);
 
-	arr_ptr = ptr;
-
-	for (indx = 0; arr_ptr[indx] != '\0'; indx++)
+	for (indx = 0; ptr[indx] != '\0'; indx++)
 	{
-		/**
-		 * Since ptr can't be set to a the
-		 * value 0 due to it being a null
-		 * pointer, arr_ptr was created to set the values to 0
-		 */
-		arr_ptr[indx] = 0;
+		ptr[indx] = 0;
 	}
 
-	return (ptr);
+	return ((void *) ptr);
 }
