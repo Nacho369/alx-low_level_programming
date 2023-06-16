@@ -61,7 +61,7 @@ int _strlen(char *str)
 {
 	int indx, len = 0;
 
-	for (indx = 0; str[indx] != '\0'; indx++)
+	for (indx = 0; str[indx] != '\0' && str[0] != '\0'; indx++)
 		len++;
 
 	return (len);
