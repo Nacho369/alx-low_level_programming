@@ -3,7 +3,7 @@
 
 
 /**
- * struct dog - A new type
+ * struct dog - A new type defined by struct
  *
  * @name: Name value given
  * @age: Age value given
@@ -14,6 +14,6 @@ struct dog
 	char *name;
 	float age;
 	char *owner;
-}
+};
 
 #endif /* DOG_H */
