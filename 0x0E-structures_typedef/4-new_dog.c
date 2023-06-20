@@ -27,11 +27,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (dog == NULL)
 		return (NULL);
 
-	name_len = _strlen(name);
-	owner_len = _strlen(owner);
+	name_len = _strlen(name) + 1;
 
 	/* Allocate space for dog name */
-	dog->name = malloc(sizeof(char) * (name_len + 1));
+	dog->name = malloc(sizeof(char) * name_len);
 
 	if (dog->name == NULL)
 	{
@@ -39,8 +38,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
+	owner_len = _strlen(owner) + 1;
+
 	/* Allocate space for dog owner */
-	dog->owner = malloc(sizeof(char) * (owner_len + 1));
+	dog->owner = malloc(sizeof(char) * owner_len);
 
 	if (dog->owner == NULL)
 	{
@@ -92,6 +93,8 @@ char *_strcpy(char *dest, char *src)
 
 	for (indx = 0; src[indx] != '\0'; indx++)
 		dest[indx] = src[indx];
+
+	dest[indx] = '\0';
 
 	return (dest);
 }
