@@ -40,7 +40,7 @@ int main(int ac, char **av)
 	res = num1 * num2;
 	printf("%lu\n", res);
 
-	return(0);
+	return (0);
 }
 
 
