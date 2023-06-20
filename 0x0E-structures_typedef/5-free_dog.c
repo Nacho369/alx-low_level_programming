@@ -4,7 +4,7 @@
 /**
  * free_dog - Free the space allocated for the dog type
  *
- * @Pointer to the dog type
+ * @d: Pointer to the dog type
  *
  * Return: void
  */
