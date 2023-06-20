@@ -2,18 +2,19 @@
 
 
 /**
- * free_dog - Free the space allocated for the dog type
+ * free_dog - free dog structure
  *
- * @d: Pointer to the dog type
+ * @d: dog struct
  *
  * Return: void
  */
 void free_dog(dog_t *d)
 {
-	if (d != NULL)
-	{
-		free(dog->name);
-		free(dog->owner);
-		free(dog);
-	}
+
+	if (d == NULL)
+		return;
+
+	free(d->name);
+	free(d->owner);
+	free(d);
 }
