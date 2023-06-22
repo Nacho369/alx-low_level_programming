@@ -4,7 +4,7 @@
 /**
  * get_op_func - Get the function to operate on
  *
- * @num1: The operator chosen
+ * @s: The operator chosen
  *
  * Return: The pointer to the operator's function or NULL
  */
@@ -21,10 +21,10 @@ int (*get_op_func(char *s))(int, int)
 
 	int i;
 
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 6; i++)
 	{
 		if (*s == *(ops[i].op))
-			return ((ops[i].f));
+			return (ops[i].f);
 	}
 
 	return (ops[i].f);

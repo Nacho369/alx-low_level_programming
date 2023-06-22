@@ -16,7 +16,7 @@ int main(int ac, char **av)
 	if (ac != 4)
 	{
 		printf("Error\n");
-		exit (98);
+		exit(98);
 	}
 
 	num1 = atoi(av[1]);
@@ -26,7 +26,7 @@ int main(int ac, char **av)
 	av[2][0] != '*' && av[2][0] != '/' && av[2][0] != '%')
 	{
 		printf("Error\n");
-		exit (99);
+		exit(99);
 	}
 
 	if (av[2][1] == '\0')
