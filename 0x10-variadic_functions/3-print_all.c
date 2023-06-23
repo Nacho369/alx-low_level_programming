@@ -23,6 +23,7 @@ void print_all(const char * const format, ...)
 		{'f', f_float},
 		{'s', f_str}
 	};
+	char *sep = "";
 
 	va_start(args, format);
 
@@ -34,10 +35,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[indx] == types[indx2].ft)
 			{
+				printf("%s", sep);
 				types[indx2].func_type(args);
-
-				if (format[++indx] != '\0')
-					printf(", ");
+				sep = ", ";
 			}
 			indx2++;
 		}
