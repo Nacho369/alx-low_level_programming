@@ -10,5 +10,8 @@
  */
 void print_all(const char * const format, ...)
 {
+	int iter;
+	va_list args;
 
+	
 }
