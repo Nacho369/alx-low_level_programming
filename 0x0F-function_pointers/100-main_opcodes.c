@@ -7,9 +7,9 @@
  * @ac: Argument count
  * @av: Argument vector
  *
- * Return:
+ * Return: 0 (Success)
  */
-int main(void)
+int main(int ac, char **av)
 {
 	int n_bytes, i;
 	int (*prog)(int, char **) = &main;
