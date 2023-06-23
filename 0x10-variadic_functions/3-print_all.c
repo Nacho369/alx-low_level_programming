@@ -1,4 +1,9 @@
-#include "main.h"
+#include "variadic_functions.h"
+
+void f_char(va_list args);
+void f_int(va_list args);
+void f_float(va_list args);
+void f_str(va_list args);
 
 
 /**
@@ -10,44 +15,109 @@
  */
 void print_all(const char * const format, ...)
 {
-	va_list a;
-	unsigned int j = 0, start = 0;
-	char *p;
+	int indx = 0, indx2;
+	va_list args;
+	f_type types[] = {
+		{'c', f_char},
+		{'i', f_int},
+		{'f', f_float},
+		{'s', f_str}
+	};
 
-	va_start(a, format);
-	while (format && format[j] != '\0')
+	va_start(args, format);
+
+	while (format[indx] != '\0' && format != NULL)
 	{
-		switch (format[j])
-		{case 'c':
-			switch (start)
-			{case 1: printf(", "); }
-			start = 1;
-			printf("%c", va_arg(a, int));
-			break;
-		case 'i':
-			switch (start)
-			{case 1: printf(", "); }
-			start = 1;
-			printf("%i", va_arg(a, int));
-			break;
-		case 'f':
-			switch (start)
-			{case 1: printf(", "); }
-			start = 1;
-			printf("%f", va_arg(a, double));
-			break;
-		case 's':
-			switch (start)
-			{case 1: printf(", "); }
-			start = 1;
-			p = va_arg(a, char*);
-			if (p)
-			{ printf("%s", p);
-			break; }
-			printf("%p", p);
-			break; }
-		j++;
+		indx2 = 0;
+
+		while (indx2 < 4)
+		{
+			if (format[indx] == types[indx2].ft)
+			{
+				types[indx2].func_type(args);
+
+				if (format[++indx] != '\0')
+					printf(", ");
+			}
+			indx2++;
+		}
+		indx++;
 	}
+
 	printf("\n");
-	va_end(a);
+	va_end(args);
+}
+
+
+/**
+ * f_char - Prints a character
+ *
+ * @args: Character
+ *
+ * Return: void
+ */
+void f_char(va_list args)
+{
+	int c;
+
+	c = va_arg(args, int);
+
+	printf("%c", c);
+}
+
+
+/**
+ * f_int - Prints an integer
+ *
+ * @args: Character
+ *
+ * Return: void
+ */
+void f_int(va_list args)
+{
+	int i;
+
+	i = va_arg(args, int);
+
+	printf("%d", i);
+}
+
+
+/**
+ * f_float - Prints a float
+ *
+ * @args: Character
+ *
+ * Return: void
+ */
+void f_float(va_list args)
+{
+	float f;
+
+	f = va_arg(args, double);
+
+	printf("%f", f);
+}
+
+
+/**
+ * f_str - Prints a string
+ *
+ * @args: Character
+ *
+ * Return: void
+ */
+void f_str(va_list args)
+{
+	char *str = NULL;
+
+	str = va_arg(args, char *);
+
+	if (str == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+
+	printf("%s", str);
 }

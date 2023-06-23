@@ -7,6 +7,20 @@
 #include <stdarg.h>
 
 
+/**
+ * struct format_type - A new struct type definin
+ * a printer.
+ *
+ * @ft: A symbol representing a data type.
+ * @func_p: A function pointer to a function that
+ * prints a data type corresponding to symbol (ft).
+ */
+typedef struct format_type
+{
+	char ft;
+	void (*func_type)(va_list args);
+} f_type;
+
 /* Prototypes */
 int _putchar(char c);
 
