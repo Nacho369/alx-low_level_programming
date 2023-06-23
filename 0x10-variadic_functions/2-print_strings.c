@@ -26,7 +26,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		printf("%s", str);
 
-		if (iter != (n - 1) && separator != NULL
+		if (iter != (n - 1) && separator != NULL)
 			printf("%s%s", str, separator);
 	}
 
