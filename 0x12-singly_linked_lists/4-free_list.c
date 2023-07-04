@@ -3,16 +3,17 @@
 
 void free_list(list_t *head)
 {
-	list_t temp = NULL, *sec = NULL
+	list_t *temp = NULL, *sec = NULL;
 
 	if (head == NULL)
 		return;
 	
 	while (head->next != NULL)
 	{
-		aux = temp->free(temp->str);
+		sec = temp->next;
 		free(temp->str);
-		temp = aux;
+		free(temp);
+		temp = sec;
 	}
 
 	head = NULL;
