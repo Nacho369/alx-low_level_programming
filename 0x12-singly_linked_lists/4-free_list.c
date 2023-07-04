@@ -4,11 +4,11 @@
 void free_list(list_t *head)
 {
 	list_t *temp = NULL;
-	list_t*sec = NULL;
+	list_t *sec = NULL;
 
 	if (head == NULL)
 		return;
-	
+
 	temp = head;
 
 	while (temp != NULL)
