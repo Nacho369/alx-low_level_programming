@@ -6,6 +6,7 @@
  * of a listint_t list.
  *
  * @head: Pointer to the head of the linked list
+ * @n: Integer value to assign
  *
  * Return: A pointer tot the modified listint_t linked list
  */
