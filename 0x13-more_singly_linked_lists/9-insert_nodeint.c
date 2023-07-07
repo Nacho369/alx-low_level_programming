@@ -13,42 +13,41 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int i = 0;
-	listint_t *temp = NULL, *new = NULL;
-	int count = 0;
+	unsigned int indx;
+	int node_check = 0;
+	listint_t *newNode = NULL, *temp = NULL, *prev = NULL;
 
-	temp = (struct listint_s *)malloc(sizeof(struct listint_s));
-	new = (struct listint_s *)malloc(sizeof(struct listint_s));
+	newNode = malloc(sizeof(listint_t));
 
-	if (new == NULL || head == NULL || temp == NULL)
+	if (newNode == NULL || head == NULL)
 		return (NULL);
+
+	newNode->n = n;
+	newNode->next = NULL;
+	temp = *head;
 
 	if (idx == 0)
 	{
-		temp->n = n;
-		temp->next = *head;
-		*head = temp;
-		return (temp);
+		newNode->next = *head;
+		*head = newNode;
+		return (newNode);
 	}
-	if (*head == 0)
-		return (NULL);
-	temp = *head;
-	new->n = n;
-	while (temp != NULL)
+
+	for (indx = 0; temp != NULL; indx++)
 	{
-		if (temp == NULL)
-			return (NULL);
-		if (i == (idx - 1))
+		if (indx == idx)
 		{
-			new->next = temp->next;
-			temp->next = new;
-			count = 1;
+			prev->next = newNode;
+			newNode->next = temp;
+			node_check = 1;
 			break;
 		}
-		i++;
+		prev = temp;
 		temp = temp->next;
 	}
-	if (count == 0)
+
+	if (node_check == 0)
 		return (NULL);
-	return (new);
+
+	return (newNode);
 }
