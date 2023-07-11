@@ -10,6 +10,7 @@
 #include <fcntl.h>
 #include <fcntl.h>
 
+#define BUFF_SIZE 1024
 
 int _putchar(char c);
 
