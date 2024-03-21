@@ -2,7 +2,8 @@
 
 
 /**
- * print_dlistint - A function that prints all the elements of a dlistint_t list
+ * print_dlistint - A function that prints all the
+ * elements of a dlistint_t list
  *
  * @h: Pointer to the head of the list
  *
