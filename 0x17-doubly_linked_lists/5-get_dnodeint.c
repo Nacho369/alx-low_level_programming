@@ -2,7 +2,8 @@
 
 
 /**
- * get_dnodeint_at_index - A function that returns the nth node of a dlistint_t linked list.
+ * get_dnodeint_at_index - A function that returns
+ * the nth node of a dlistint_t linked list.
  *
  * @head: A pointer to the head of the list
  * @index: Index of which the function returns the node
