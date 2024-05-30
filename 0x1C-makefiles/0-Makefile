@@ -1,0 +1,10 @@
+CC = gcc
+exec = school
+
+.PHONY: all
+
+all : $(exec)
+
+$(exec) : $(exec).c
+	$(CC) main.c school.c -o $@
+
