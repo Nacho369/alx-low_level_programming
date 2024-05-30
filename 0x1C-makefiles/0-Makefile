@@ -1,10 +1,5 @@
-CC = gcc
-exec = school
-
 .PHONY: all
 
-all : $(exec)
-
-$(exec) : $(exec).c
-	$(CC) main.c school.c -o $@
+all : school.c
+	gcc main.c school.c -o school
 
