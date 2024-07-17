@@ -1,5 +1,6 @@
 #include "search_algos.h"
 
+
 /**
  * exponential_search - Searches using exponential search
  * @array: A pointer to the first element of the array to search.
@@ -8,7 +9,6 @@
  *
  * Return: NULL, -1, the index where the value is located.
  */
-
 int exponential_search(int *array, size_t size, int value)
 {
 	size_t i = 0, right, left, j;
