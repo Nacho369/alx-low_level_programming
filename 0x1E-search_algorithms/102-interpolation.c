@@ -6,7 +6,7 @@
  * of integers using the interpolation searcj algorithm
  * @array: pointer to the first element of the array to search
  * @size: number of elements in the array
- * @value: value to search for
+ * @value: value to search for in array
  * Return: index of value or -1 if array is null or value is not present
  */
 int interpolation_search(int *array, size_t size, int value)
