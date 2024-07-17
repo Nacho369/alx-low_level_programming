@@ -1,5 +1,6 @@
 #include "search_algos.h"
 
+
 /**
  * advanced_binary_recursive - searches recursively
  * @array: pointer to first element in the array
@@ -8,7 +9,6 @@
  * @value: element to search for
  *Return: -1 or index of the value
  */
-
 int advanced_binary_recursive(int *array, size_t left, size_t right, int value)
 {
 	size_t i;
@@ -34,6 +34,7 @@ int advanced_binary_recursive(int *array, size_t left, size_t right, int value)
 		return (advanced_binary_recursive(array, i + 1, right, value));
 }
 
+
 /**
  * advanced_binary - function that searches for a value in a sorted array
  * of integers and returns the index of the first value in the array
@@ -42,7 +43,6 @@ int advanced_binary_recursive(int *array, size_t left, size_t right, int value)
  * @value: element to be searched for
  * Return: index of the value or -1 if array is NULL or value is absent
  */
-
 int advanced_binary(int *array, size_t size, int value)
 {
 	if (array == NULL || size == 0)
